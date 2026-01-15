@@ -11,9 +11,9 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">sunny@123</property>
 		<!-- <property name="hbm2ddl.auto">create</property> -->
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		<property name="show_sql">true</property>
-		<mapping resource="employee.hbm.xml" />
+		<mapping class="com.sunny.entity.Employee" />
 	
 	
 	</session-factory>
