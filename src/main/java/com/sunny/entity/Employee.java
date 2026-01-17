@@ -5,7 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Transient;
+
+@NamedQuery(name = "updateAnEmployee", query = "update empp set name=:n where id=:i")
+@NamedQuery(name = "deleteEmployeeById", query = "delete from empp where id=:i")
 
 @Entity(name = "empp")
 public class Employee {
