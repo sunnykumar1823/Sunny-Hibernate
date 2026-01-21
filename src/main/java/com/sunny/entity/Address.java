@@ -18,9 +18,8 @@ public class Address {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(int hNo, String city, String state) {
+	public Address(String city, String state) {
 		super();
-		this.hNo = hNo;
 		this.city = city;
 		this.state = state;
 	}
