@@ -17,7 +17,7 @@ public class Employee {
 	private String gender;
 	private int salary;
 
-	@OneToOne
+	@OneToOne(mappedBy = "employee")
 	@JoinColumn(name = "add_id")
 	private Address address;
 
@@ -76,8 +76,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + ", address="
-				+ address + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + "]";
 	}
 
 }
