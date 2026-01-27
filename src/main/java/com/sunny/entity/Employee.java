@@ -1,13 +1,14 @@
 package com.sunny.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 
-@Entity(name = "empp")
+@Entity
 public class Employee {
 
 	@Id
@@ -17,9 +18,8 @@ public class Employee {
 	private String gender;
 	private int salary;
 
-	@OneToOne(mappedBy = "employee")
-	@JoinColumn(name = "add_id")
-	private Address address;
+	@OneToMany
+	private List<Address> addresses;
 
 	public Employee() {
 		super();
@@ -34,12 +34,12 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public Address getAddress() {
-		return address;
+	public List<Address> getAddresses() {
+		return addresses;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 
 	public int getId() {
