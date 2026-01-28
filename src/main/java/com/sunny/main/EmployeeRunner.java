@@ -1,9 +1,10 @@
 package com.sunny.main;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.sunny.config.EmpConfiguration;
-import com.sunny.entity.Employee;
+import com.sunny.entity.Address;
 
 public class EmployeeRunner {
 
@@ -17,14 +18,17 @@ public class EmployeeRunner {
 //		Address add1 = new Address();
 //		add1.setCity("Chakia");
 //		add1.setState("Bihar");
+//		add1.setEmployee(emp);
 //
 //		Address add2 = new Address();
 //		add2.setCity("Noida");
 //		add2.setState("UP");
+//		add2.setEmployee(emp);
 //
 //		Address add3 = new Address();
 //		add3.setCity("Raxul");
 //		add3.setState("Bihar");
+//		add3.setEmployee(emp);
 //
 //		ArrayList<Address> listOfAddresses = new ArrayList<>();
 //		listOfAddresses.add(add1);
@@ -34,17 +38,21 @@ public class EmployeeRunner {
 //		emp.setAddresses(listOfAddresses);
 
 		Session session = EmpConfiguration.getSessionFactory().openSession();
-//		Transaction tx = session.beginTransaction();
-//
+		Transaction tx = session.beginTransaction();
+
 //		session.persist(add1);
 //		session.persist(add2);
 //		session.persist(add3);
 //		session.persist(emp);
 //		tx.commit();
 
-		Employee employee = session.find(Employee.class, 1);
-		System.out.println(employee);
-		System.out.println(employee.getAddresses());
+//		Employee employee = session.find(Employee.class, 1);
+//		System.out.println(employee);
+//		System.out.println(employee.getAddresses());
+
+		Address address = session.find(Address.class, 1);
+		System.out.println(address);
+		System.out.println(address.getEmployee());
 
 	}
 
