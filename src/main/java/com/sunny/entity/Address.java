@@ -1,10 +1,12 @@
 package com.sunny.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Address {
@@ -14,8 +16,8 @@ public class Address {
 	private int hNo;
 	private String city, state;
 
-	@ManyToOne
-	private Employee employee;
+	@ManyToMany(mappedBy = "addresses")
+	private List<Employee> employees;
 
 	public Address() {
 		super();
@@ -28,12 +30,12 @@ public class Address {
 		this.state = state;
 	}
 
-	public Employee getEmployee() {
-		return employee;
+	public List<Employee> getEmployees() {
+		return employees;
 	}
 
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
 	}
 
 	public int gethNo() {

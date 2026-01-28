@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Employee {
@@ -18,7 +18,7 @@ public class Employee {
 	private String gender;
 	private int salary;
 
-	@OneToMany
+	@ManyToMany
 	private List<Address> addresses;
 
 	public Employee() {
